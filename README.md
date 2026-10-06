@@ -3,7 +3,7 @@
 A personal, unified skill-and-agent repository. Combines:
 
 - **`skills/`** — 14 methodology skills from [`obra/superpowers`](https://github.com/obra/superpowers) v6.3.0 (brainstorming, systematic-debugging, TDD, subagent-driven-development, verification-before-completion, etc.)
-- **`agents/`** — 10 curated persona agents from [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) (forked via `binbinao/agency-agents`), selected for the most frequent development scenarios: `backend-architect`, `code-reviewer`, `security-engineer`, `performance-benchmarker`, `technical-writer`, `accessibility-auditor`, `frontend-developer`, `mobile-app-builder`, `devops-automator`, `mobile-app-builder` (one extra slot reserved for future domain).
+- **`agents/`** — 9 curated persona agents from [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) (forked via `binbinao/agency-agents`), selected for the most frequent development scenarios: `backend-architect`, `code-reviewer`, `security-engineer`, `performance-benchmarker`, `technical-writer`, `accessibility-auditor`, `frontend-developer`, `mobile-app-builder`, `devops-automator`.
 
 Goal — replace the dual-source dependency (superpowers as an omp plugin, agency-agents as a three-copy sprawl at `~/.claude/agents/`, `~/.omp/agent/agents/`, and project-level `.omp/agents/`) with **one self-owned repo** that loads both surfaces into the same session. Compared to the pre-merge state, this repo:
 
@@ -66,10 +66,10 @@ Goal — replace the dual-source dependency (superpowers as an omp plugin, agenc
 │   ├── using-superpowers/   # bootstrap; loaded automatically at session start
 │   ├── verification-before-completion/
 │   └── ... (8 more)
-├── agents/                 # 10 persona .md files copied from agency-agents
+├── agents/                 # 9 persona .md files copied from agency-agents
 │   ├── backend-architect.md
 │   ├── code-reviewer.md
-│   └── ... (8 more)
+│   └── ... (7 more)
 ├── references/             # cross-cutting notes (loaded on demand)
 ├── assets/templates/       # install / scaffold templates
 ├── LICENSE                 # MIT, see LICENSE
