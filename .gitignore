@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.DS_Store
+.idea/
+.vscode/
+.omp/
+
+# Generated / runtime artifacts (never check in)
+/tmp/
+references/provenance.sha256.bak
