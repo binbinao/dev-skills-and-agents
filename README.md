@@ -20,12 +20,19 @@ Goal — replace the dual-source dependency (superpowers as an omp plugin, agenc
    ```bash
    git clone git@github.com:binbinao/dev-skills-and-agents.git ~/Documents/GitHub/dev-skills-and-agents
    ```
-2. **Symlink into omp's discovery path** so skills and agents are loaded:
+2. **Symlink into omp's discovery path** so skills, agents, and the session-start bootstrap are loaded:
    ```bash
-   # skills → omp discovers ~/.claude/skills/*/SKILL.md and ~/.omp/plugins/*/skills/
+   # skills → omp discovers ~/.claude/skills/<name>/SKILL.md
    ln -snf ~/Documents/GitHub/dev-skills-and-agents/skills/* ~/.claude/skills/
-   # agents → omp discovers ~/.omp/agent/agents/*.md and ~/.claude/agents/*.md
+   # agents → omp discovers ~/.omp/agent/agents/*.md
    ln -snf ~/Documents/GitHub/dev-skills-and-agents/agents/*.md ~/.omp/agent/agents/
+   # hooks / session-start bootstrap → must live under an omp-recognized plugin
+   # (either ~/.omp/plugins/<plugin-name>/ or a path registered in package.json
+   # `pi.extensions`). Easiest is a symlink:
+   ln -snf ~/Documents/GitHub/dev-skills-and-agents ~/.omp/plugins/dev-skills-and-agents
+   # that puts `.pi/extensions/superpowers.ts` and `hooks/` exactly where omp
+   # expects them — see `package.json` at the repo root for the `pi.extensions`
+   # entry that triggers loading.
    ```
    If you prefer not to symlink, run the equivalent `cp -R` once after each upgrade.
 3. **Disable the original superpowers omp plugin** if you want a single source of truth — the `using-superpowers` skill here is the bootstrap; loading both will inject duplicate workflow mandates. Disable via:

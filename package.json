@@ -1,0 +1,21 @@
+{
+  "name": "dev-skills-and-agents",
+  "version": "0.1.0",
+  "description": "Unified skill-and-agent repo: 14 superpowers methodology skills + 9 agency-agents personas. See README.md.",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "skills",
+    "agents",
+    "personas",
+    "methodology"
+  ],
+  "pi": {
+    "extensions": [
+      "./.pi/extensions/superpowers.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  }
+}
